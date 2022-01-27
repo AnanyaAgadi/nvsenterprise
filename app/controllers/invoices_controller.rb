@@ -3,7 +3,7 @@ class InvoicesController < ApplicationController
 
   # GET /invoices or /invoices.json
   def index
-    @invoices = Invoice.all
+    @invoices = Invoice.paginate(page: params[:page], per_page: 4)
   end
 
   # GET /invoices/1 or /invoices/1.json
